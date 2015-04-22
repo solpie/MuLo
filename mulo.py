@@ -28,12 +28,13 @@ class MuLo():
         c = 0
         mulos = []
         lenMuLos = len(self.mulos)
-        if pageIdx * count > lenMuLos:
+        if (pageIdx - 1) * count > lenMuLos:
             pass
         else:
-            for i in range(pageIdx * count, lenMuLos):
+            for i in range((pageIdx - 1) * count, lenMuLos):
                 if c < count:
                     mulos.append(self.mulos[i])
+                    c += 1
                     pass
                 pass
         return mulos

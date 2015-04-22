@@ -19,7 +19,9 @@ def page():
     idx = request.query.idx
     if not idx:
         idx = 1
-    count = 20
+    else:
+        idx = int(idx)
+    count = 5
     response.status = 200
     response.content_type = 'application/json'
     return json.dumps(mulo.getPage(idx, count))

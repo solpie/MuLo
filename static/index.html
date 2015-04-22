@@ -3,22 +3,39 @@
 <head lang="en">
     <script src="js/jquery.min.js"></script>
     <script src="js/mulo.js"></script>
-    <script src="js/reactjs.js"></script>
-    <!--<script src="/js/angular.min.js"></script>-->
+    <!--<script src="js/reactjs.js"></script>-->
+    <script src="js/mustache.min.js"></script>
     <link rel="stylesheet" href="css/reset.css">
     <!-- CSS reset -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Resource style -->
-    <script src="js/JSXTransformer.js"></script>
+    <!--<script src="js/JSXTransformer.js"></script>-->
     <meta charset="UTF-8">
     <title>SolPie - MuLo</title>
 </head>
 <body>
 <div class="lightBox"></div>
 <div class="weibo"></div>
-<div id="example"></div>
-<div id="timeline"></div>
-<script type="text/jsx" src="hello.jsx"></script>
-<script type="text/jsx" src="index.jsx"></script>
+
+<header id="cd-header">
+</header>
+
+<script type="text/template" class="mulo-tpl">
+    {{#data}}
+    <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-movie">
+            <img src="img/cd-icon-movie.svg" alt="Movie"/>
+        </div>
+        <div class="cd-timeline-content">
+            <h2>Final Section</h2>
+
+            <p>{{id}}{{text}}</p>
+            <span class="cd-date">{{date}}</span>
+        </div>
+    </div>
+    {{/data}}
+</script>
+<section id="cd-timeline" class="cd-container"></section>
+
 </body>
 </html>
